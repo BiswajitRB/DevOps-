@@ -1,6 +1,7 @@
 name: CICD
 
 on: 
+# add the manual keyword for delivery
   workflow_dispatch: 
 
 jobs:
