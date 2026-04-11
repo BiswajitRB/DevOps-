@@ -2,8 +2,19 @@ name: CICD
 
 on: 
 # add the manual keyword for delivery
-  workflow_dispatch: 
-
+  workflow_dispatch:
+   inputs:
+    enviroment:
+      description: this is  the enviroment where the workflow run
+      default: 'dev'
+      required: true
+      type: choice
+      options:
+        - dev
+        - prod
+        - staging
+      
+      
 jobs:
 #every jobs need seprate runner
 #its called as parallelism
@@ -28,9 +39,10 @@ jobs:
       - name: testing the container
         run: echo "test the container sucessfully"
 
-  deploy:
-    runs-on: ubuntu-latest
+  deploy: 
+    if: inputs.environment == 'dev'
     needs: [build,test]
+    runs-on: ubuntu-latest
     steps:
       - name: deploy in instance
         run: echo "deployed in instance"
