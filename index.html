@@ -204,25 +204,20 @@
   </div>
 </section>
 
-<!-- GitHub Projects Auto Fetch -->
+<!-- Static Projects Section (No API - Static Website) -->
 <section>
-  <h2>Live GitHub Projects</h2>
-  <div id="github-projects" class="projects"></div>
+  <h2>Highlighted Projects</h2>
+  <div class="projects">
+    <div class="glass card">
+      <h3>🚀 MCP Crypto Server</h3>
+      <p>FastAPI-based backend handling real-time crypto data with caching, SSE streaming, and Docker deployment.</p>
+    </div>
+    <div class="glass card">
+      <h3>📚 Student Management System</h3>
+      <p>Spring Boot REST API system with optimized queries and Dockerized deployment.</p>
+    </div>
+  </div>
 </section>
-
-<script>
-fetch("https://api.github.com/users/BiswajitRB/repos")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("github-projects");
-    data.slice(0,4).forEach(repo => {
-      const div = document.createElement("div");
-      div.className = "glass card";
-      div.innerHTML = `<h3>${repo.name}</h3><p>${repo.description || "No description"}</p>`;
-      container.appendChild(div);
-    });
-  });
-</script>
 
 
 
