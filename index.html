@@ -8,256 +8,212 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{color:white;overflow-x:hidden;}
+
+/* 🌈 Animated Background */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:linear-gradient(45deg,#00f5ff,#0066ff,#8e2de2,#ff00cc);
+animation:moveBg 10s linear infinite;
+z-index:-1;
+}
+@keyframes moveBg{
+0%{transform:translate(0,0);}
+50%{transform:translate(-25%,-25%);}
+100%{transform:translate(0,0);}
 }
 
-body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
+/* Cursor */
+.cursor{
+position:fixed;
+width:20px;height:20px;
+background:#00f5ff;
+border-radius:50%;
+pointer-events:none;
+box-shadow:0 0 20px #00f5ff;
 }
 
-/* NAVBAR */
-nav {
-    position: fixed;
-    width: 100%;
-    padding: 20px 10%;
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.05);
-    display: flex;
-    justify-content: space-between;
-    z-index: 1000;
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+padding:20px 10%;
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.05);
+display:flex;
+justify-content:space-between;
+z-index:1000;
 }
-
-nav a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #00f5ff;
-}
+nav a{color:white;margin-left:20px;text-decoration:none;}
+nav a:hover{color:#00f5ff;}
 
 /* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 }
-
-.glass {
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(20px);
-    padding: 50px;
-    border-radius: 20px;
-    text-align: center;
-    width: 80%;
-    max-width: 900px;
-    transition: 0.4s;
+.glass{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+padding:50px;
+border-radius:20px;
+text-align:center;
+transition:0.3s;
 }
-
-.glass:hover {
-    transform: scale(1.03);
-}
-
-.hero h1 {
-    font-size: 45px;
-}
-
-.hero span {
-    color: #00f5ff;
-}
-
-.btn {
-    margin-top: 20px;
-    padding: 12px 30px;
-    border-radius: 30px;
-    border: none;
-    background: #00f5ff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-}
+.glass:hover{transform:scale(1.05);}
+.typing{color:#00f5ff;font-weight:bold;}
 
 /* SECTION */
-section {
-    padding: 100px 10%;
-}
-
-h2 {
-    margin-bottom: 30px;
-}
+section{padding:100px 10%;}
 
 /* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 25px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 /* CARD */
-.card {
-    background: rgba(255,255,255,0.08);
-    padding: 25px;
-    border-radius: 15px;
-    transition: 0.4s;
+.card{
+background:rgba(255,255,255,0.1);
+padding:20px;
+border-radius:15px;
+transition:0.3s;
 }
+.card:hover{transform:translateY(-10px);}
 
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    background: rgba(255,255,255,0.15);
+/* FORM */
+input,textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:10px;
+border:none;
 }
-
-/* TAG */
-.tag {
-    display: inline-block;
-    background: rgba(0,245,255,0.2);
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 10px;
-    font-size: 12px;
+button{
+padding:10px 20px;
+border-radius:20px;
+border:none;
+background:#00f5ff;
+cursor:pointer;
 }
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    opacity: 0.7;
-}
+#form-status{margin-top:10px;}
 </style>
 </head>
 
 <body>
 
+<div class="cursor"></div>
+
 <!-- NAV -->
 <nav>
-    <h3>Biswajit</h3>
-    <div>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-    </div>
+<h3>Biswajit</h3>
+<div>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-    <div class="glass">
-        <h1>Hi, I'm <span>Biswajit Andia</span></h1>
-        <p>DevOps Engineer • Java Backend Developer • Cloud Enthusiast</p>
-        <p>Building scalable systems, automating deployments, and optimizing performance.</p>
-        <button class="btn">Download Resume</button>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-    <h2>Professional Summary</h2>
-    <div class="glass">
-        <p>
-            Versatile DevOps Engineer and Java Backend Developer with hands-on experience in building scalable backend systems 
-            using Java, Spring Boot, and REST APIs. Skilled in CI/CD pipelines, Docker, Kubernetes, and cloud platforms (AWS, Azure). 
-            Strong expertise in microservices, containerization, and performance optimization with proven impact in reducing latency and deployment time.
-        </p>
-    </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-    <h2>Work Experience</h2>
-    <div class="card">
-        <h3>DevOps & Backend Intern - YHills Edutech</h3>
-        <p>Noida, India</p>
-        <ul>
-            <li>Handled 1000+ API requests/day using Spring Boot</li>
-            <li>Reduced API response time by 30%</li>
-            <li>Built CI/CD pipelines (Docker + Jenkins) → deployment time ↓ 50%</li>
-            <li>Achieved 99.9% uptime on AWS/GCP</li>
-        </ul>
-    </div>
+<div class="glass">
+<h1>Hi, I'm Biswajit Andia</h1>
+<h2>I am a <span class="typing"></span></h2>
+<p>DevOps Engineer • Java Backend • Cloud Enthusiast</p>
+</div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
+<h2>Projects</h2>
+<div class="grid">
 
-        <div class="card">
-            <h3>Crypto MCP Server</h3>
-            <p>Real-time crypto data server with <200ms latency</p>
-            <p>✔ SSE Streaming (60% faster)</p>
-            <p>✔ TTL caching (40% fewer requests)</p>
-            <p>✔ 85% test coverage (Pytest)</p>
-        </div>
+<div class="card">
+<h3>Crypto MCP Server</h3>
+<p>FastAPI + Docker + Real-time crypto streaming</p>
+</div>
 
-        <div class="card">
-            <h3>Student Management System</h3>
-            <p>Spring Boot based system with optimized DB</p>
-            <p>✔ Performance improved by 40%</p>
-            <p>✔ Error reduction by 35%</p>
-            <p>✔ Dockerized deployment</p>
-        </div>
+<div class="card">
+<h3>Student Management System</h3>
+<p>Spring Boot + MySQL + Docker</p>
+</div>
 
-    </div>
+</div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="grid">
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Me</h2>
 
-        <div class="card">
-            <h3>DevOps & Cloud</h3>
-            <span class="tag">Docker</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Jenkins</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Terraform</span>
-        </div>
+<form id="contact-form" action="https://formspree.io/f/xaqawyaz" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
-        <div class="card">
-            <h3>Backend</h3>
-            <span class="tag">Java</span>
-            <span class="tag">Spring Boot</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">Python</span>
-        </div>
+<button type="submit">Send Message</button>
+<p id="form-status"></p>
+</form>
 
-        <div class="card">
-            <h3>Systems & Tools</h3>
-            <span class="tag">Linux</span>
-            <span class="tag">NGINX</span>
-            <span class="tag">Git</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">MongoDB</span>
-        </div>
-
-    </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
-<section>
-    <h2>Achievements</h2>
-    <div class="grid">
-        <div class="card">🏆 Runner-up among 2000+ participants</div>
-        <div class="card">🔐 Reported critical XSS vulnerability</div>
-        <div class="card">🚀 Delivered 5+ production projects (0 downtime)</div>
-    </div>
-</section>
+<script>
+// ✨ Typing Effect
+const roles=["DevOps Engineer","Java Developer","Cloud Engineer"];
+let i=0,j=0,current="",isDeleting=false;
 
-<!-- FOOTER -->
-<footer>
-    © 2026 Biswajit Andia | DevOps Portfolio
-</footer>
+function type(){
+if(i<roles.length){
+if(!isDeleting&&j<=roles[i].length){
+current=roles[i].substring(0,j++);
+}else if(isDeleting&&j>=0){
+current=roles[i].substring(0,j--);
+}
+document.querySelector(".typing").textContent=current;
+
+if(j===roles[i].length)isDeleting=true;
+if(j===0){isDeleting=false;i++;}
+}else{i=0;}
+
+setTimeout(type,isDeleting?50:100);
+}
+type();
+
+// 🎯 Cursor Glow
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",e=>{
+cursor.style.top=e.clientY+"px";
+cursor.style.left=e.clientX+"px";
+});
+
+// 🚀 Form Submit (no reload)
+const form=document.getElementById("contact-form");
+const status=document.getElementById("form-status");
+
+form.addEventListener("submit",async function(e){
+e.preventDefault();
+const data=new FormData(form);
+
+const response=await fetch(form.action,{
+method:form.method,
+body:data,
+headers:{'Accept':'application/json'}
+});
+
+if(response.ok){
+status.innerHTML="✅ Message sent successfully!";
+form.reset();
+}else{
+status.innerHTML="❌ Something went wrong!";
+}
+});
+</script>
 
 </body>
 </html>
