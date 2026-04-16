@@ -1,22 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biswajit Andia | DevOps Engineer</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biswajit Andia | DevOps Engineer</title>
+
+<style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* CONTAINER */
+.container {
+    width: 85%;
+    margin: auto;
+    max-width: 1100px;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #1e293b, #020617);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #38bdf8;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #94a3b8;
+}
+
+.hero-desc {
+    margin: 15px 0;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    color: #fff;
+    background: #38bdf8;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 1px solid #38bdf8;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #020617;
+    padding: 15px 0;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #38bdf8;
+}
+
+/* SECTION */
+.section {
+    padding: 50px 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+/* SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.skill {
+    background: #1e293b;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* PROJECTS */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: #334155;
+}
+
+/* CONTACT */
+a {
+    color: #38bdf8;
+}
+
+/* FOOTER */
+footer {
+    background: #020617;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+</style>
+
 </head>
 <body>
 
-<header>
+<header class="hero">
     <div class="container">
         <h1>Biswajit Andia</h1>
         <p class="tagline">DevOps Engineer | Cloud | CI/CD | Automation</p>
+        <p class="hero-desc">
+            Building scalable infrastructure, automating deployments, and optimizing cloud systems.
+        </p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
     </div>
 </header>
 
-<nav>
-    <div class="container">
+<nav class="navbar">
+    <div class="container nav-flex">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -24,75 +179,63 @@
     </div>
 </nav>
 
-<section id="about" class="container">
+<section id="about" class="section container">
     <h2>About Me</h2>
     <p>
-        I am an aspiring DevOps Engineer with a strong foundation in cloud computing, 
-        automation, and continuous integration/continuous deployment (CI/CD). 
-        I have hands-on experience working with tools like Docker, Kubernetes, Jenkins, 
-        and AWS to build scalable and efficient systems.
+        I am an aspiring DevOps Engineer with hands-on experience in cloud platforms,
+        containerization, and CI/CD automation. I specialize in Docker,
+        Kubernetes, Jenkins, and AWS.
     </p>
     <p>
-        I am passionate about optimizing workflows, improving deployment reliability, 
-        and solving real-world infrastructure challenges.
+        I focus on improving deployment pipelines, reducing downtime, and building scalable systems.
     </p>
 </section>
 
-<section id="skills" class="container">
+<section id="skills" class="section container">
     <h2>Technical Skills</h2>
-    <div class="skills-container">
-        <span>Docker</span>
-        <span>Kubernetes</span>
-        <span>Jenkins</span>
-        <span>AWS</span>
-        <span>GitHub Actions</span>
-        <span>Linux</span>
-        <span>Python</span>
-        <span>Terraform</span>
+    <div class="skills-grid">
+        <div class="skill">Docker</div>
+        <div class="skill">Kubernetes</div>
+        <div class="skill">Jenkins</div>
+        <div class="skill">AWS</div>
+        <div class="skill">GitHub Actions</div>
+        <div class="skill">Linux</div>
+        <div class="skill">Python</div>
+        <div class="skill">Terraform</div>
     </div>
 </section>
 
-<section id="projects" class="container">
+<section id="projects" class="section container">
     <h2>Projects</h2>
+    <div class="projects-grid">
 
-    <div class="project-card">
-        <h3>🚀 Crypto Market MCP Server</h3>
-        <p>
-            Developed and Dockerized a Python-based server that delivers real-time 
-            cryptocurrency market data. Implemented containerization for portability 
-            and scalability.
-        </p>
+        <div class="project-card">
+            <h3>🚀 Crypto Market MCP Server</h3>
+            <p>Dockerized Python app providing real-time crypto market data.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>⚙️ CI/CD Pipeline</h3>
+            <p>Automated deployment using GitHub Actions and Docker.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>☁️ AWS Deployment</h3>
+            <p>Deployed scalable applications with monitoring and logging.</p>
+        </div>
+
     </div>
-
-    <div class="project-card">
-        <h3>⚙️ CI/CD Pipeline Automation</h3>
-        <p>
-            Designed and implemented an automated CI/CD pipeline using GitHub Actions 
-            and Docker, enabling seamless build, test, and deployment workflows.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>☁️ Cloud Deployment on AWS</h3>
-        <p>
-            Deployed scalable applications on AWS with monitoring, logging, and 
-            infrastructure management to ensure high availability and performance.
-        </p>
-    </div>
-
 </section>
 
-<section id="contact" class="container">
+<section id="contact" class="section container">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
 </section>
 
 <footer>
-    <div class="container">
-        <p>© 2026 Biswajit Andia | DevOps Engineer | Built with ❤️ and Automation</p>
-    </div>
+    <p>© 2026 Biswajit Andia | DevOps Engineer | Built with ❤️ and Automation</p>
 </footer>
 
 </body>
