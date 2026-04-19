@@ -3,9 +3,9 @@
 name: hello
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - '**.html'
+#  push:
+#    paths:
+#      - '**.html'
   
 jobs:
   greet:
