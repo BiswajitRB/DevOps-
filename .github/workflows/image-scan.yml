@@ -12,9 +12,7 @@ jobs:
     Docker_image_validation:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
-              
+
             - name: login to docker hub               #after build the image from docker file where we find the image (dockerhub)
               uses: docker/login-action@v3            # so first we need to login dockerhub 
               with:
@@ -27,4 +25,3 @@ jobs:
                 image-ref: ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{github.sha}}
                 severity: 'CRITICAL,HIGH'
                 exit-code: '1'
-                trivyignore: ${{ github.workspace }}/.trivyignore
