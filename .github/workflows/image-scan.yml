@@ -4,7 +4,7 @@ name: docker image scan
 on:
     workflow_call:
         secrets:
-           DOCKERHUB_TOKEN:
+           DOCKERHUB_TOKEN:  #for access the dockerhub we need this secret key                
             required: true
            DOCKERHUB_USER:
             required: true
@@ -22,5 +22,5 @@ jobs:
               uses: aquasecurity/trivy-action@0.35.0
               with:
                 image-ref: ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{github.sha}}
-                severity: 'CRITICAL'
+                severity: 'CRITICAL,HIGH'
                 exit-code: '1'
