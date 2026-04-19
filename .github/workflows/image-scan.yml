@@ -6,8 +6,6 @@ on:
         secrets:
            DOCKERHUB_TOKEN:  #for access the dockerhub we need this secret key                
             required: true
-           DOCKERHUB_USER:
-            required: true
 jobs:
     Docker_image_validation:
         runs-on: ubuntu-latest
