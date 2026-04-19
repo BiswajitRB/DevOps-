@@ -1,0 +1,13 @@
+name: end to end pipline getways        #all devsecops pipline called here
+on:
+    workflow_dispatch:
+jobs:
+    code-quality:
+        uses: ./.github/workflows/code-quality.yml
+    secrets-scan:
+        uses: ./.github/workflows/secrets-scan.yml
+    dependency_scan:
+        uses: ./.github/workflows/dependency-scan.yml
+    docker_scan:
+        uses: ./.github/workflows/docker-lint.yml
+    
