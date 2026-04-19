@@ -2,6 +2,7 @@ name: end to end pipline getways        #all devsecops pipline called here
 on:
     push:
         branches: [main]
+    workflow_dispatch:
 jobs:
     code-quality:
         uses: ./.github/workflows/code-quality.yml
