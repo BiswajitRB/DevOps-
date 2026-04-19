@@ -23,7 +23,6 @@ jobs:
         uses: ./.github/workflows/image-scan.yml
         secrets:
             inherit
-        trivyignore: ${{ github.workspace }}/.trivyignore
 
 
     
