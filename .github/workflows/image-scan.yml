@@ -12,7 +12,6 @@ jobs:
     Docker_image_validation:
         runs-on: ubuntu-latest
         steps:
-
             - name: login to docker hub               #after build the image from docker file where we find the image (dockerhub)
               uses: docker/login-action@v3            # so first we need to login dockerhub 
               with:
