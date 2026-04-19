@@ -10,4 +10,7 @@ jobs:
         uses: ./.github/workflows/dependency-scan.yml
     docker_scan:
         uses: ./.github/workflows/docker-lint.yml
+    build:
+        needs: [code-quality,secrets-scan,dependency_scan,docker_scan]
+        uses: ./.github/workflows/docker-build-push.yml
     
