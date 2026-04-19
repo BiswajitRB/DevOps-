@@ -1,2 +1,22 @@
-#its use for package scan , which kind of issues in them 
+#its use for package scan ,dependency scan -> which kind of issues in them 
 name: dependency scan 
+on:
+    workflow_call:
+jobs:
+    dependency_check:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: code checkout              #step 1 -> check the code is ok or not
+              uses: actions/checkout@v4
+
+            - name: python setup              # step 2 -> first we need python setup becouse pip run on python    
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.12"
+
+            - name: install pipaudit      #step 3 -> this action scan python based dependency
+              run: pip install pip-audit      # here we install pip-audit
+
+            - name: audit dependency        # step 4 -> after installation this step scan the dependencies of the application 
+              run: pip-audit -r requirements.txt  # in this application all dependencies(packages) are wrote in requirements.txt so we write -> pip-audit -r requirements.txt
