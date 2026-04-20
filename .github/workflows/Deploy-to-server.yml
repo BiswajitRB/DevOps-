@@ -2,7 +2,7 @@
 #deploying to a server safe/ secure and tested application (help of DevSecOps principles) 
 name: deploy to server
 on:
-    workflow_call
+    workflow_call:
 jobs:
     deploy:
         runs-on: ubuntu-latest       # why we need this  -> for ssh to server side
