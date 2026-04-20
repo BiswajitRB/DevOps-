@@ -15,6 +15,6 @@ jobs:
                 key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
                 scripts: |
                   echo "start deploying"
-                  mkdir prod
+                  mkdir -p devops
 
 
