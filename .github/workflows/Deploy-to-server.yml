@@ -3,6 +3,13 @@
 name: deploy to server
 on:
     workflow_call:
+        secrets:
+           EC2_SSH_HOST:
+            required: true
+           EC2_SSH_PRIVATE_KEY:
+            required: true
+           EC2_SSH_USERNAME:
+            required: true
 jobs:
     deploy:
         runs-on: ubuntu-latest       # why we need this  -> for ssh to server side
