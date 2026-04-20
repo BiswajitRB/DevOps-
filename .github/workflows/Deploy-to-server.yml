@@ -13,6 +13,9 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-latest       # why we need this  -> for ssh to server side
+        env:
+            DOCKERHUB_USER: ${{vars.DOCKERHUB_USER}}
+            DOCKER_TAG: ${{github.event.workflow_run.head_sha}}
         steps:
             - name: checkout code
               uses: actions/checkout@v4
@@ -45,6 +48,4 @@ jobs:
                 script: |
                   echo "run the app"
                   echo ${{secrets.DOCKERHUB_TOKEN}} | docker login --username ${{vars.DOCKERHUB_USER}} --password-stdin
-                  export DOCKERHUB_USER=${{vars.DOCKERHUB_USER}}
-                  export DOCKERHUB_TAG=${{github.event.workflow_run.head_sha}}
                   cd ~/devops && docker compose down && docker compose up -d --build --force-recreate --pull always
